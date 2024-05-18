@@ -45,6 +45,7 @@ class StorageCsv(IStorage):
 
     def movies_data_dict(self):
         movies = self.csv_to_dict()
+        print(movies)
         return movies
 
     def list_movies(self):
@@ -60,6 +61,8 @@ class StorageCsv(IStorage):
                   f"Rating: {value['rating']}\n"
                   f"Year: {value['year']}\n"
                   f"Poster URL: {value['poster']}")
+
+        return movies
 
     def add_movie(self):
 

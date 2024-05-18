@@ -67,9 +67,9 @@ class MovieApp:
         value_counter = 0.0
         median_list = []
         for key, value in movies.items():
-            rating = value['rating'][0:3]
-            value_counter = value_counter + float(rating)
-            median_list.append(float(rating))
+            rating = value['rating']
+            value_counter = value_counter + float(rating[0:3])
+            median_list.append(float(rating[0:3]))
 
         average_value = value_counter / number_of_items
         print(f"\nThe average rating is {average_value}")

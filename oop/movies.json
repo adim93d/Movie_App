@@ -96,7 +96,7 @@
     },
     "South Park": {
         "rating": "8.7/10",
-        "year": "1997\u2013",
+        "year": "1997",
         "poster": "https://m.media-amazon.com/images/M/MV5BZjNhODYzZGItZWQ3Ny00ZjViLTkxMTUtM2EzN2RjYjU2OGZiXkEyXkFqcGdeQXVyMTI5MTc0OTIy._V1_SX300.jpg"
     },
     "The End": {
@@ -105,7 +105,7 @@
         "poster": "https://m.media-amazon.com/images/M/MV5BMjI5MTM3NTMyM15BMl5BanBnXkFtZTcwOTU2NDE0NA@@._V1_SX300.jpg"
     },
     "Soul": {
-        "rating": 10.0,
+        "rating": "10.0",
         "year": "2020",
         "poster": "https://m.media-amazon.com/images/M/MV5BZGE1MDg5M2MtNTkyZS00MTY5LTg1YzUtZTlhZmM1Y2EwNmFmXkEyXkFqcGdeQXVyNjA3OTI0MDc@._V1_SX300.jpg"
     },
