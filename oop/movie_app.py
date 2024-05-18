@@ -15,7 +15,7 @@ class MovieApp:
         """
         Display the best rated movies from the database
         """
-        movies = self._storage.read_file()
+        movies = self._storage.movies_data_dict()
         highest_rated_movie_counter = 0
         movie_ratings = [float(value['rating'][0:3]) for key, value in movies.items()]
         highest_rated = max(movie_ratings)
@@ -38,7 +38,7 @@ class MovieApp:
         """
         Display the worst rated movies from the database
         """
-        movies = self._storage.read_file()
+        movies = self._storage.movies_data_dict()
         lowest_rated_movie_counter = 0
         movie_ratings = [float(value['rating'][0:3]) for key, value in movies.items()]
         lowest_rated = min(movie_ratings)
@@ -62,7 +62,7 @@ class MovieApp:
         Display the best and the worst rated movies from the database
         Display the median and the average ratings
         """
-        movies = self._storage.read_file()
+        movies = self._storage.movies_data_dict()
         number_of_items = int(len(movies))
         value_counter = 0.0
         median_list = []
@@ -81,7 +81,7 @@ class MovieApp:
         """
         Suggests a random movie and show their rating
         """
-        movies = self._storage.read_file()
+        movies = self._storage.movies_data_dict()
         import random
         list_items = list(movies.items())
         random_title = random.choice(list_items)
@@ -92,7 +92,7 @@ class MovieApp:
         """
         Search the Database with case-insensitive
         """
-        movies = self._storage.read_file()
+        movies = self._storage.movies_data_dict()
         movie_to_search = input("Enter name to search: ")
         for key, value in movies.items():
             if movie_to_search in key.casefold():
@@ -104,7 +104,7 @@ class MovieApp:
         """
         Sort the database by the value at a descending order
         """
-        movies = self._storage.read_file()
+        movies = self._storage.movies_data_dict()
         sorted_movies = sorted(movies.items(),
                                key=lambda movie: movie[1]['rating'][0:3],
                                reverse=True)
@@ -126,7 +126,7 @@ class MovieApp:
             print("Error Generating Website")
 
     def serialize_movies(self):
-        movies = self._storage.read_file()
+        movies = self._storage.movies_data_dict()
         output = ""
         for key, value in movies.items():
             output += "    <li>\n"

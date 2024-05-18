@@ -30,6 +30,10 @@ class StorageJson(IStorage):
             movies_dict[movie] = movie_dict
         return movies_dict
 
+    def movies_data_dict(self):
+        movies = self.json_to_dict()
+        return movies
+
     def list_movies(self):
         """
         Display the number of movies and their Title:Ratings

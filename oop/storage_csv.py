@@ -22,7 +22,7 @@ class StorageCsv(IStorage):
 
     def csv_to_dict(self):
         # Open the CSV file in read mode
-        data_dict = {}
+        movies_dict = {}
         with open(self.file_path, 'r') as file:
             # Create a CSV reader object
             reader = csv.reader(file, delimiter=',')
@@ -36,12 +36,16 @@ class StorageCsv(IStorage):
                 release_date = row[2]
                 poster_link = row[3]
 
-                data_dict[movie_name] = {
+                movies_dict[movie_name] = {
                     "rating": rating,
                     "year": release_date,
                     "poster": poster_link
                 }
-        return data_dict
+        return movies_dict
+
+    def movies_data_dict(self):
+        movies = self.csv_to_dict()
+        return movies
 
     def list_movies(self):
 
@@ -56,7 +60,6 @@ class StorageCsv(IStorage):
                   f"Rating: {value['rating']}\n"
                   f"Year: {value['year']}\n"
                   f"Poster URL: {value['poster']}")
-        return self.csv_to_dict()
 
     def add_movie(self):
 
